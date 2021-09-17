@@ -7,13 +7,12 @@ abbr -a branches "git branch --all | grep -v HEAD"
 
 set -x PATH $HOME/.anyenv/bin $PATH
 
-# Setup anyenv
-eval (anyenv init - | source)
-
 # iTerm integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 # Setup starship
 starship init fish | source
 
+# Setup asdf
+source /usr/local/opt/asdf/libexec/asdf.fish
 
