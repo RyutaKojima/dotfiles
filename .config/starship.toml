@@ -1,0 +1,79 @@
+
+add_newline = true
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 50
+style = "yellow"
+
+[[battery.display]]
+threshold = 100
+style = "white"
+
+[cmd_duration]
+min_time = 10
+show_milliseconds = true
+format = "[$duration](bold yellow)"
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+
+[hostname]
+ssh_only = false
+format =  "[$hostname](bold red) "
+trim_at = ".companyname.com"
+disabled = false
+
+[memory_usage]
+disabled = true
+threshold = -1
+symbol = " "
+style = "bold dimmed green"
+
+[shell]
+unknown_indicator = "mystery shell"
+disabled = false
+
+[time]
+disabled = false
+format = '🕙[ $time]($style) '
+time_format = "%T"
+utc_time_offset = "+9"
+
+[aws]
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+
+[deno]
+format = '\[[$symbol($version)]($style)\]'
+
+[git_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+
+[package]
+format = '\[[$symbol$version]($style)\]'
+
+[php]
+format = '\[[$symbol($version)]($style)\]'
+
+[username]
+format = '\[[$user]($style)\]'
+style_user = "white"
+style_root = "white bold"
+show_always = true
+
+
