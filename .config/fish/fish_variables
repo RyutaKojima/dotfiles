@@ -4,8 +4,6 @@ SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_branches:git\x20branch\x20\x2d\x2dall\x20\x7c\x20grep\x20\x2dv\x20HEAD
 SETUVAR _fish_abbr_g:cd\x20\x28ghq\x20list\x20\x2d\x2dfull\x2dpath\x20\x7c\x20fzf\x20\x2d\x2dpreview\x3d\x27cd\x20\x7b\x7d\x20\x26\x20git\x20branch\x20\x2da\x27\x29
 SETUVAR _fish_abbr_gg:ghq\x20get
-SETUVAR _fish_abbr_gphp:cd\x20\x28ghq\x20list\x20\x2d\x2dfull\x2dpath\x20\x7c\x20fzf\x29\x20\x26\x26\x20phpstorm\x20\x2e/
-SETUVAR _fish_abbr_gphp2:set\x20GPHP2\x20\x28ghq\x20list\x20\x2d\x2dfull\x2dpath\x20\x7c\x20fzf\x29
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
