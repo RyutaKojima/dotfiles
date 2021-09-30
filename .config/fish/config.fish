@@ -9,7 +9,7 @@ abbr -a gg ghq get
 abbr -a g cd "(ghq list --full-path | fzf --preview='cd {} & git branch -a')"
 # abbr -a gp "cd (ghq list --full-path | fzf) && phpstorm ./"
 
-abbr -a branches "git branch --all | grep -v HEAD"
+abbr -a branches "git branch --all"
 
 set -x PATH $HOME/.anyenv/bin $PATH
 
