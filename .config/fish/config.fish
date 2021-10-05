@@ -6,9 +6,6 @@ alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
 alias lta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less -r'
 
 abbr -a gg ghq get
-abbr -a g cd "(ghq list --full-path | fzf --preview='cd {} & git branch -a')"
-# abbr -a gp "cd (ghq list --full-path | fzf) && phpstorm ./"
-
 abbr -a branches "git branch --all"
 
 set -x PATH $HOME/.anyenv/bin $PATH
