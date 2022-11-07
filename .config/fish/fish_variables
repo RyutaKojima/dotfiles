@@ -1,7 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_branches:git\x20branch\x20\x2d\x2dall
+SETUVAR _fish_abbr_dcd:docker\x2dcompose\x20down
+SETUVAR _fish_abbr_dce:docker\x2dcompose\x20exec\x20app\x20ash
+SETUVAR _fish_abbr_dcu:docker\x2dcompose\x20up\x20\x2dd
 SETUVAR _fish_abbr_gg:ghq\x20get
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
@@ -32,3 +35,4 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
