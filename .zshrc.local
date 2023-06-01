@@ -1,0 +1,46 @@
+
+function gf() {
+    ghq list --full-path | fzf --preview='cd {} & git branch -a'
+}
+
+function g() {
+    local REPO_FULLPATH=`gf`
+    if [ -n "${REPO_FULLPATH}" ]; then
+        cd ${REPO_FULLPATH}
+    fi
+}
+
+function gp() {
+    local REPO_FULLPATH=`gf`
+    if [ -n "${REPO_FULLPATH}" ]; then
+        cd ${REPO_FULLPATH}
+        phpstorm .
+    fi
+}
+
+# ssh
+function sshp() {
+    local HOST="$(command egrep -i '^Host\s+.+' $HOME/.ssh/config $(find $HOME/.ssh/conf.d -type f 2>/dev/null) | command egrep -v '[*?]' | awk '{print $2}' | sort | fzf)"
+
+    if [ -n "$HOST" ]; then
+        ssh $HOST
+    fi
+    reset-prompt
+}
+
+#
+alias e="exa --icons --git"
+alias l="e"
+alias ls="e"
+abbr -S ll="ls -l"
+abbr -S la="ls -la"
+alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+alias lta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less -r'
+
+# Git
+abbr -S gg='ghq get'
+
+# Docker Compose
+abbr -S dcu='docker-compose up -d'
+abbr -S dce='docker-compose exec app ash'
+abbr -S dcd='docker-compose down'

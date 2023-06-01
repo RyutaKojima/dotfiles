@@ -1,8 +1,16 @@
-# dotfiles
+# Dependent packages
 
-Setup
+- zsh-abbr
+- ghq
+- fzf
+- exa
+
+```shell
+brew install zsh-abbr ghq fzf exa
+```
+
+# Setup
 
 ```
 sh bin/install.sh
 ```
-
