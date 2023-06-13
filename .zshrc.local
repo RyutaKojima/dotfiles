@@ -4,23 +4,24 @@ function gf() {
 }
 
 function g() {
-    local REPO_FULLPATH=`gf`
-    if [ -n "${REPO_FULLPATH}" ]; then
-        cd ${REPO_FULLPATH}
+    local REPO_FULL_PATH=`gf`
+    if [ -n "${REPO_FULL_PATH}" ]; then
+        cd ${REPO_FULL_PATH}
     fi
 }
 
 function gp() {
-    local REPO_FULLPATH=`gf`
-    if [ -n "${REPO_FULLPATH}" ]; then
-        cd ${REPO_FULLPATH}
+    local REPO_FULL_PATH=`gf`
+    if [ -n "${REPO_FULL_PATH}" ]; then
+        cd ${REPO_FULL_PATH}
         phpstorm .
     fi
 }
 
 # ssh
 function sshp() {
-    local HOST="$(command egrep -i '^Host\s+.+' $HOME/.ssh/config $(find $HOME/.ssh/conf.d -type f 2>/dev/null) | command egrep -v '[*?]' | awk '{print $2}' | sort | fzf)"
+    local FILE_LIST=$(find -L $HOME/.ssh/conf.d -type f 2>/dev/null)
+    local HOST="$(command egrep -i '^Host\s+.+' $HOME/.ssh/config $(echo $FILE_LIST) | command egrep -v '[*?]' | awk '{print $2}' | sort | fzf)"
 
     if [ -n "$HOST" ]; then
         ssh $HOST
