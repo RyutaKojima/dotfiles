@@ -21,7 +21,8 @@ function gp() {
 # ssh
 function sshp() {
     local FILE_LIST=$(find -L $HOME/.ssh/conf.d -type f 2>/dev/null)
-    local HOST="$(command egrep -i '^Host\s+.+' $HOME/.ssh/config $(echo $FILE_LIST) | command egrep -v '[*?]' | awk '{print $2}' | sort | fzf)"
+    local HOST_LIST="$(command egrep -i '^Host\s+.+' $HOME/.ssh/config $(echo $FILE_LIST) | command egrep -v '[*?]' | awk '{print $2}' | sort)"
+    local HOST="$(echo $HOST_LIST | fzf)"
 
     if [ -n "$HOST" ]; then
         ssh $HOST
