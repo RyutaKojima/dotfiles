@@ -46,3 +46,7 @@ abbr -S gg='ghq get'
 abbr -S dcu='docker-compose up -d'
 abbr -S dce='docker-compose exec app ash'
 abbr -S dcd='docker-compose down'
+
+abbr -S mcu='mutagen-compose up -d'
+abbr -S mce='mutagen-compose exec app ash'
+abbr -S mcd='mutagen-compose down'
