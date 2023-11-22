@@ -1,3 +1,11 @@
+function killMiteras() {
+    pgrep MiTERASWVAgent | read x;
+    if [[ -n $pid ]]; then
+        kill $x
+    fi
+
+    curl -X POST -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_WORK/messages" -d "body=業務終了します。お疲れ様でした。"
+}
 
 function gf() {
     ghq list --full-path | fzf --preview='cd {} & git branch -a'
@@ -43,9 +51,9 @@ alias lta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less
 abbr -S gg='ghq get'
 
 # Docker Compose
-abbr -S dcu='docker-compose up -d'
-abbr -S dce='docker-compose exec app ash'
-abbr -S dcd='docker-compose down'
+abbr -S dcu='docker compose up -d'
+abbr -S dce='docker compose exec app ash'
+abbr -S dcd='docker compose down'
 
 abbr -S mcu='mutagen-compose up -d'
 abbr -S mce='mutagen-compose exec app ash'
