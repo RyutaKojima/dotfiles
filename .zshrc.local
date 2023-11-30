@@ -1,8 +1,5 @@
 function killMiteras() {
-    pgrep MiTERASWVAgent | read x;
-    if [[ -n $pid ]]; then
-        kill $x
-    fi
+    pkill MiTERASWVAgent
 
     curl -X POST -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_WORK/messages" -d "body=業務終了します。お疲れ様でした。"
 }
