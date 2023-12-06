@@ -2,12 +2,22 @@ function hello() {
     open -a MiTERASWVAgent
 
     curl -X POST -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_WORK/messages" -d "body=おはようございます。業務開始します。"
+
+    RESPONSE=`curl -X POST -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_MY_CHAT/messages" -d "body=出勤"`
+    MESSAGE_ID=`echo $RESPONSE | jq .message_id | tr -d '"'`
+    sleep 1
+    curl -X DELETE -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_MY_CHAT/messages/$MESSAGE_ID"
 }
 
 function killMiteras() {
     pkill MiTERASWVAgent
 
     curl -X POST -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_WORK/messages" -d "body=業務終了します。お疲れ様でした。"
+
+    RESPONSE=`curl -X POST -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_MY_CHAT/messages" -d "body=退勤"`
+    MESSAGE_ID=`echo $RESPONSE | jq .message_id | tr -d '"'`
+    sleep 1
+    curl -X DELETE -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_MY_CHAT/messages/$MESSAGE_ID"
 }
 
 function gf() {
