@@ -2,7 +2,7 @@ function hello() {
     open -a MiTERASWVAgent
 }
 
-function killMiteras() {
+function seeYou() {
     pkill MiTERASWVAgent
 }
 
