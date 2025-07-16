@@ -3,10 +3,10 @@
 - zsh-abbr
 - ghq
 - fzf
-- exa
+- ~~exa~~ => eza
 
 ```shell
-brew install zsh-abbr ghq fzf exa
+brew install zsh-abbr ghq fzf eza
 ```
 
 # Setup
