@@ -22,6 +22,7 @@ function killMiteras() {
 #    curl -X DELETE -H "X-ChatWorkToken: $CHAT_WORK_TOKEN" "https://api.chatwork.com/v2/rooms/$CHAT_WORK_ROOM_ID_OF_MY_CHAT/messages/$MESSAGE_ID"
 }
 
+# for ghq
 function gf() {
     ghq list --full-path | fzf --preview='cd {} & git branch -a'
 }
@@ -53,10 +54,11 @@ function sshp() {
     reset-prompt
 }
 
-#
+# List commands
 alias e="exa --icons --git"
 alias l="e"
 #alias ls="e"
+
 abbr -S ll="ls -l"
 abbr -S la="ls -la"
 alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
@@ -75,6 +77,7 @@ abbr -S mcu='mutagen-compose up -d'
 abbr -S mce='mutagen-compose exec app ash'
 abbr -S mcd='mutagen-compose down'
 
+# AWS-vault
 function aws_vault_prompt {
   if [ -n "$AWS_VAULT" ]; then
     echo "(aws-vault: $AWS_VAULT)"
